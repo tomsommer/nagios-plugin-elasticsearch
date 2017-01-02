@@ -148,7 +148,7 @@ class ElasticSearchCheck(NagiosCheck):
         # Details like the number of get, search, and indexing 
         # operations come from here.
         es_stats = get_json(r'http://%s:%d/%s_nodes/_local/'
-                            'stats?all=true' % (host, port, prefix))
+                            'stats' % (host, port, prefix))
 
         myid = es_stats['nodes'].keys()[0]
 
